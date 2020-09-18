@@ -1,0 +1,23 @@
+	Mat CroixRouge(Mat gray){
+				
+		    line(gray, Point(30,20), Point(30, 40), Scalar( 0, 0, 255 ),  2, 8 ); // vertical
+			line(gray, Point(20,30), Point(40, 30), Scalar( 0, 0, 255 ),  2, 8 ); // horizontal
+			
+		return gray;
+		}
+	
+		
+int main (int argc, char** argv)
+{
+	Mat img;
+	img = imread("lena.jpg");  
+	Mat gray;
+	cvtColor(img, gray, COLOR_BGR2GRAY);
+	gray = CroixRouge(img);
+	
+	namedWindow("Image - Lena", WINDOW_AUTOSIZE);
+	imshow("Image - Lena", gray);
+	waitKey(0);
+	
+}
+
